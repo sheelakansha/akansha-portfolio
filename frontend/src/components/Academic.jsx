@@ -2,25 +2,14 @@ import React from 'react';
 
 const Academic = () => {
     const education = [
-        {
-            institution: "SHEFI",
-            location: "Virtual",
-            degree: "Season 14 Cohort Member",
-            year: "June 2025 – September 2025",
-            description: [
-                "Selected as a SheFi Scholar for Season 14, a program empowers women in DeFi, Web3, and finance.",
-                "Participating in weekly sessions on blockchain, digital finance, and leadership."
-            ]
-        },
+
         {
             institution: "NANHI KASHTIYAN (NGO)",
             location: "New Delhi (onsite)",
             degree: "Volunteer / Intern (Certificate)",
             year: "May 2024 – June 2024",
             description: [
-                "Spearheaded educational and healthcare awareness initiatives, including organ donation, impacting 1,000+ participants.",
-                "Directed the Smart Girl Program, empowering 10,000+ adolescent girls with essential life skills.",
-                "Architected and deployed digital tracking systems & data analytics to measure program impact resulting in 123 students securing jobs or higher education placements."
+                "Spearheaded educational and healthcare initiatives like the Smart Girl Program impacting 11,000+ participants, and deployed digital tracking systems that facilitated 123 student placements."
             ]
         }
     ];

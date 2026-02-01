@@ -6,7 +6,7 @@ const About = () => {
             <h2 className="section-title">About Me</h2>
             <div className="about-grid">
                 <div className="about-text">
-                    <p>Hello! I'm Akansha, a 3rd-year student at Netaji Subhas University of Technology (NSUT). I enjoy turning complex problems into simple, beautiful, and intuitive designs.</p>
+                    <p>Hello! I'm Akansha, a Pre-final year B.Tech (Electrical Engineering) student at NSUT Delhi. I enjoy turning complex problems into simple, beautiful, and intuitive designs.</p>
                     <p>When I'm not coding, you can find me exploring new technologies, contributing to open source, or enjoying a good cup of coffee.</p>
                     <div className="skills-tags">
                         <span className="skill-tag">HTML5</span>
