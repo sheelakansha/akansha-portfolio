@@ -17,8 +17,8 @@ const About = () => {
                         <span class="skill-tag">UI/UX Design</span>
                     </div>
                 </div>
-                <div className="about-image" style={{ background: 'var(--card-bg)', height: '300px', borderRadius: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#555' }}>
-                    [Your Image Here]
+                <div className="about-image" style={{ background: 'transparent', height: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <img src="/profile.png" alt="Akansha" style={{ maxWidth: '100%', maxHeight: '100%', borderRadius: '20px', objectFit: 'cover' }} />
                 </div>
             </div>
         </section>
