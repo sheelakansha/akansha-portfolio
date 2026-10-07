@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 /**
  * Experience Component (Academic.jsx)
  * Full-screen section (100vh) displaying professional experience cards.
+ * Background: #FFFFFF (White) | Text: #000000 (Black)
  */
 const Academic = () => {
     const experiences = [
@@ -50,7 +51,8 @@ const Academic = () => {
     return (
         <section 
             id="experience" 
-            className="relative w-full h-screen max-h-screen bg-black text-white flex flex-col justify-center items-center overflow-hidden px-6 sm:px-12 md:px-16 lg:px-24 py-10 md:py-16 select-none"
+            className="relative w-full h-screen max-h-screen bg-white text-black flex flex-col justify-center items-center overflow-hidden px-6 sm:px-12 md:px-16 lg:px-24 py-10 md:py-16 select-none"
+            style={{ backgroundColor: '#ffffff', color: '#000000' }}
         >
             <div className="w-full max-w-6xl mx-auto flex flex-col items-center justify-center my-auto">
                 {/* SECTION TITLE */}
@@ -61,7 +63,10 @@ const Academic = () => {
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                 >
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white m-0">
+                    <h2 
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-black m-0"
+                        style={{ color: '#000000' }}
+                    >
                         Experience
                     </h2>
                 </motion.div>
@@ -79,21 +84,24 @@ const Academic = () => {
                         variants={cardVariants}
                         whileHover={{ y: -4 }}
                         transition={{ type: "spring", stiffness: 240, damping: 20 }}
-                        className="bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 backdrop-blur-md flex flex-col justify-between hover:border-violet-500/60 transition-colors duration-300 shadow-xl"
+                        className="bg-zinc-50/80 border border-black/10 rounded-2xl p-6 sm:p-8 flex flex-col justify-between hover:border-black/30 transition-colors duration-300 shadow-md"
                     >
                         <div>
                             <div className="flex justify-between items-start flex-wrap gap-2 mb-2">
-                                <h3 className="text-lg sm:text-xl font-bold text-white tracking-wide">
+                                <h3 
+                                    className="text-lg sm:text-xl font-bold text-black tracking-wide"
+                                    style={{ color: '#000000' }}
+                                >
                                     {experiences[0].role}
                                 </h3>
-                                <span className="text-xs sm:text-sm italic font-medium text-violet-400">
+                                <span className="text-xs sm:text-sm italic font-medium text-zinc-600">
                                     {experiences[0].period}
                                 </span>
                             </div>
-                            <h4 className="text-sm sm:text-base font-semibold text-zinc-300 mb-4">
+                            <h4 className="text-sm sm:text-base font-semibold text-zinc-800 mb-4">
                                 {experiences[0].institution}
                             </h4>
-                            <ul className="list-disc list-inside text-xs sm:text-sm text-zinc-400 leading-relaxed space-y-2">
+                            <ul className="list-disc list-inside text-xs sm:text-sm text-zinc-700 leading-relaxed space-y-2">
                                 {experiences[0].description.map((item, i) => (
                                     <li key={i}>{item}</li>
                                 ))}
@@ -102,28 +110,31 @@ const Academic = () => {
                     </motion.div>
 
                     {/* Divider Line */}
-                    <div className="hidden md:block w-[2px] bg-gradient-to-b from-violet-500/10 via-violet-500 to-violet-500/10 rounded-full self-stretch" />
+                    <div className="hidden md:block w-[2px] bg-black/15 rounded-full self-stretch" />
 
                     {/* NANHI KASHTIYAN Card */}
                     <motion.div 
                         variants={cardVariants}
                         whileHover={{ y: -4 }}
                         transition={{ type: "spring", stiffness: 240, damping: 20 }}
-                        className="bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 backdrop-blur-md flex flex-col justify-between hover:border-violet-500/60 transition-colors duration-300 shadow-xl"
+                        className="bg-zinc-50/80 border border-black/10 rounded-2xl p-6 sm:p-8 flex flex-col justify-between hover:border-black/30 transition-colors duration-300 shadow-md"
                     >
                         <div>
                             <div className="flex justify-between items-start flex-wrap gap-2 mb-2">
-                                <h3 className="text-lg sm:text-xl font-bold text-white tracking-wide">
+                                <h3 
+                                    className="text-lg sm:text-xl font-bold text-black tracking-wide"
+                                    style={{ color: '#000000' }}
+                                >
                                     {experiences[1].role}
                                 </h3>
-                                <span className="text-xs sm:text-sm italic font-medium text-violet-400">
+                                <span className="text-xs sm:text-sm italic font-medium text-zinc-600">
                                     {experiences[1].period}
                                 </span>
                             </div>
-                            <h4 className="text-sm sm:text-base font-semibold text-zinc-300 mb-4">
-                                {experiences[1].institution} <span className="text-xs text-zinc-400 font-normal">| {experiences[1].location}</span>
+                            <h4 className="text-sm sm:text-base font-semibold text-zinc-800 mb-4">
+                                {experiences[1].institution} <span className="text-xs text-zinc-600 font-normal">| {experiences[1].location}</span>
                             </h4>
-                            <ul className="list-disc list-inside text-xs sm:text-sm text-zinc-400 leading-relaxed space-y-2">
+                            <ul className="list-disc list-inside text-xs sm:text-sm text-zinc-700 leading-relaxed space-y-2">
                                 {experiences[1].description.map((item, i) => (
                                     <li key={i}>{item}</li>
                                 ))}
