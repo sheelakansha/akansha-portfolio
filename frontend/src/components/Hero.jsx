@@ -66,23 +66,23 @@ const Hero = () => {
                 initial="hidden"
                 animate="visible"
             >
-                {/* 1. NAME "Akansha" (Top layer z-20, solid white, elegant display serif) */}
+                {/* 1. NAME "Akansha" (Large display serif name) */}
                 <motion.h1
                     variants={textVariants}
-                    className="relative z-20 text-[clamp(3.5rem,7.8vw,8.5rem)] font-normal text-white leading-[0.88] text-center select-none tracking-tight"
+                    className="relative z-20 text-[clamp(4.5rem,12.5vw,13.5rem)] font-normal text-white leading-[0.85] text-center select-none tracking-tight"
                     style={{ fontFamily: '"Bodoni Moda", "Cormorant Garamond", serif', fontWeight: 400 }}
                 >
                     Akansha
                 </motion.h1>
 
-                {/* 2. B&W PHOTO (Middle layer z-10, ~28-32% width, 3-5 deg clockwise tilt, sharp corners) */}
+                {/* 2. B&W PHOTO (Centered landscape photo with ~2.5 deg tilt and overlapping margins) */}
                 <motion.div
                     variants={photoVariants}
-                    whileHover={{ scale: 1.03, rotate: 1.5 }}
+                    whileHover={{ scale: 1.02, rotate: 1.5 }}
                     transition={{ type: "spring", stiffness: 220, damping: 22 }}
-                    className="relative z-10 -mt-7 sm:-mt-10 md:-mt-12 lg:-mt-[52px] -mb-9 sm:-mb-13 md:-mb-16 lg:-mb-[64px] cursor-pointer flex justify-center"
+                    className="relative z-10 -mt-6 sm:-mt-10 md:-mt-14 lg:-mt-[56px] -mb-10 sm:-mb-14 md:-mb-20 lg:-mb-[84px] cursor-pointer flex justify-center"
                 >
-                    <div className="w-[280px] sm:w-[380px] md:w-[460px] lg:w-[540px] xl:w-[560px] aspect-[4/3] overflow-hidden bg-black rounded-none border-0 shadow-none">
+                    <div className="w-[300px] sm:w-[420px] md:w-[500px] lg:w-[580px] xl:w-[620px] aspect-[4/3] overflow-hidden bg-black rounded-none border-0 shadow-none">
                         <img
                             src={profilePhoto}
                             alt="Akansha"
@@ -91,23 +91,23 @@ const Hero = () => {
                     </div>
                 </motion.div>
 
-                {/* 3. THE WORD "PORTFOLIO" (Bottom layer z-0, solid white Inter 400, ~60-65% screen width) */}
+                {/* 3. THE WORD "PORTFOLIO" (Large uppercase Inter title) */}
                 <motion.div
                     variants={textVariants}
                     className="relative z-0 w-full text-center"
                 >
                     <h2 
-                        className="text-[clamp(3rem,10.2vw,10.8rem)] font-normal text-white uppercase tracking-[0.03em] leading-[0.88] text-center select-none"
+                        className="text-[clamp(3.5rem,11.5vw,12rem)] font-normal text-white uppercase tracking-[0.03em] leading-[0.88] text-center select-none"
                         style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400 }}
                     >
                         PORTFOLIO
                     </h2>
                 </motion.div>
 
-                {/* 4. SUBTITLE (Pure white Inter regular, tight gap below PORTFOLIO) */}
+                {/* 4. SUBTITLE (Product Designer & Developer) */}
                 <motion.p
                     variants={textVariants}
-                    className="mt-6 sm:mt-7 text-sm sm:text-base md:text-[17px] font-normal text-white tracking-wide text-center"
+                    className="mt-6 sm:mt-8 text-sm sm:text-base md:text-[17px] font-normal text-white tracking-wide text-center"
                     style={{ fontFamily: 'Inter, sans-serif' }}
                 >
                     Product Designer &amp; Developer
