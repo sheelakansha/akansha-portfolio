@@ -51,6 +51,7 @@ const About = () => {
         <section 
             id="about" 
             className="relative w-full min-h-screen bg-white text-black px-6 sm:px-12 md:px-16 lg:px-24 py-16 md:py-24 overflow-hidden flex flex-col justify-between select-none"
+            style={{ backgroundColor: '#ffffff' }}
         >
             {/* TOP HEADER & MAIN PHOTO ROW */}
             <div className="w-full flex flex-col md:flex-row justify-between items-start gap-8 md:gap-12">
