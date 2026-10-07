@@ -70,8 +70,8 @@ const Projects = () => {
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                 >
                     <h2 
-                        className="text-[38px] sm:text-[48px] md:text-[60px] font-normal uppercase tracking-tight text-white text-left m-0 p-0"
-                        style={{ fontFamily: 'Inter, sans-serif', fontSize: '60px', fontWeight: 400, textTransform: 'uppercase' }}
+                        className="text-[38px] sm:text-[48px] md:text-[60px] font-bold uppercase tracking-tight text-white text-left m-0 p-0"
+                        style={{ fontFamily: 'Inter, sans-serif', fontSize: '60px', fontWeight: 700, textTransform: 'uppercase' }}
                     >
                         LATEST PROJECTS
                     </h2>
