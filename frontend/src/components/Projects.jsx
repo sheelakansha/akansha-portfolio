@@ -5,9 +5,9 @@ import aayulinkImg from '../assets/aayulink.png';
 
 /**
  * Projects Component
- * Full-screen section (100vh) with horizontal 2-column layout:
- * Left side: O2 Sentinel | Right side: AayuLink
- * Compact image sizing with descriptions below.
+ * Full-screen section (100vh) displaying two distinct project boxes side-by-side:
+ * Left Box: O2 Sentinel | Right Box: AayuLink
+ * Image placed at the top of each box with description & details positioned below.
  */
 const Projects = () => {
     const projects = [
@@ -61,7 +61,7 @@ const Projects = () => {
             className="relative w-full h-screen max-h-screen bg-black text-white flex flex-col justify-center items-center overflow-hidden px-6 sm:px-12 md:px-16 lg:px-24 py-6 md:py-10 select-none"
         >
             <div className="w-full max-w-6xl mx-auto flex flex-col items-start justify-center my-auto">
-                {/* SECTION HEADER (Left-aligned, 60px size, uppercase) */}
+                {/* SECTION HEADER (Left-aligned, 60px size, bold uppercase) */}
                 <motion.div 
                     className="w-full mb-4 md:mb-6 text-left"
                     initial={{ opacity: 0, y: -15 }}
@@ -77,7 +77,7 @@ const Projects = () => {
                     </h2>
                 </motion.div>
 
-                {/* HORIZONTAL PROJECTS GRID (Left: O2 Sentinel | Right: AayuLink) */}
+                {/* TWO HORIZONTAL PROJECT BOXES (Left Box: O2 Sentinel | Right Box: AayuLink) */}
                 <motion.div 
                     className="w-full grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-7 items-stretch"
                     variants={containerVariants}
@@ -91,14 +91,14 @@ const Projects = () => {
                             variants={cardVariants}
                             whileHover={{ y: -4 }}
                             transition={{ type: "spring", stiffness: 220, damping: 20 }}
-                            className="bg-white/5 border border-white/10 rounded-2xl p-4 lg:p-5 backdrop-blur-md flex flex-col justify-between hover:border-white/30 transition-colors duration-300 shadow-xl overflow-hidden"
+                            className="bg-zinc-900/80 border border-white/15 rounded-2xl p-5 lg:p-6 backdrop-blur-md flex flex-col justify-between hover:border-white/40 transition-colors duration-300 shadow-2xl overflow-hidden"
                         >
-                            {/* Smaller Compact Image Container (Clickable) */}
+                            {/* Project Image Box at Top (Clickable) */}
                             <a 
                                 href={project.link} 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
-                                className="w-full h-[140px] sm:h-[160px] lg:h-[175px] rounded-xl overflow-hidden bg-black mb-3 block group cursor-pointer border border-white/5 flex items-center justify-center"
+                                className="w-full h-[140px] sm:h-[160px] lg:h-[175px] rounded-xl overflow-hidden bg-black mb-4 block group cursor-pointer border border-white/10 flex items-center justify-center"
                                 aria-label={`Open ${project.title}`}
                             >
                                 <img 
@@ -108,7 +108,7 @@ const Projects = () => {
                                 />
                             </a>
 
-                            {/* Details Below Image */}
+                            {/* Details & Description Below Image */}
                             <div className="flex flex-col flex-1 justify-between">
                                 <div>
                                     <span className="text-[11px] font-bold text-violet-400 uppercase tracking-widest block mb-1">
@@ -125,7 +125,7 @@ const Projects = () => {
                                     </div>
 
                                     {/* Description below image */}
-                                    <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-3">
+                                    <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-4">
                                         {project.description}
                                     </p>
                                 </div>
@@ -143,13 +143,13 @@ const Projects = () => {
                                         ))}
                                     </div>
 
-                                    {/* Project Action Links */}
+                                    {/* Action Links */}
                                     <div className="flex items-center gap-2.5">
                                         <a 
                                             href={project.link} 
                                             target="_blank" 
                                             rel="noopener noreferrer" 
-                                            className="px-3.5 py-1.5 bg-white text-black font-semibold rounded-full text-xs hover:bg-zinc-200 transition-colors duration-200"
+                                            className="px-4 py-1.5 bg-white text-black font-semibold rounded-full text-xs hover:bg-zinc-200 transition-colors duration-200"
                                         >
                                             View Project
                                         </a>
