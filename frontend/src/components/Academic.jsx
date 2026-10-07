@@ -1,11 +1,17 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
+/**
+ * Experience Component (Academic.jsx)
+ * Full-screen section (100vh) displaying professional experience cards.
+ */
 const Academic = () => {
     const experiences = [
         {
             role: "SUMMER INTERN",
             institution: "DRDO CFEES",
             period: "June 2026 – July 2026",
+            location: "",
             description: [
                 "Built O2 Sentinel, a real-time oxygen monitoring and forecasting dashboard."
             ]
@@ -21,55 +27,113 @@ const Academic = () => {
         }
     ];
 
-    const drdo = experiences[0];
-    const nanhi = experiences[1];
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2,
+                delayChildren: 0.1,
+            },
+        },
+    };
+
+    const cardVariants = {
+        hidden: { opacity: 0, y: 24 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1] },
+        },
+    };
 
     return (
-        <section id="experience" className="academic">
-            <h2 className="section-title">Experience</h2>
-            <div className="experience-container">
-                {/* Left Side - DRDO CFEES */}
-                <div className="experience-card left">
-                    <div className="experience-header">
-                        <h3>{drdo.role}</h3>
-                        <span className="experience-period">{drdo.period}</span>
-                    </div>
-                    <h4 className="experience-institution">
-                        {drdo.institution} {drdo.location && <span className="experience-location">| {drdo.location}</span>}
-                    </h4>
-                    <div className="experience-description">
-                        <ul>
-                            {drdo.description.map((item, i) => (
-                                <li key={i}>{item}</li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
+        <section 
+            id="experience" 
+            className="relative w-full h-screen max-h-screen bg-black text-white flex flex-col justify-center items-center overflow-hidden px-6 sm:px-12 md:px-16 lg:px-24 py-10 md:py-16 select-none"
+        >
+            <div className="w-full max-w-6xl mx-auto flex flex-col items-center justify-center my-auto">
+                {/* SECTION TITLE */}
+                <motion.div 
+                    className="mb-8 md:mb-12 text-center"
+                    initial={{ opacity: 0, y: -15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                >
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white m-0">
+                        Experience
+                    </h2>
+                </motion.div>
 
-                {/* Separator Line */}
-                <div className="experience-divider"></div>
+                {/* EXPERIENCE CONTAINER */}
+                <motion.div 
+                    className="w-full grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-8 items-stretch"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                >
+                    {/* DRDO Card */}
+                    <motion.div 
+                        variants={cardVariants}
+                        whileHover={{ y: -4 }}
+                        transition={{ type: "spring", stiffness: 240, damping: 20 }}
+                        className="bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 backdrop-blur-md flex flex-col justify-between hover:border-violet-500/60 transition-colors duration-300 shadow-xl"
+                    >
+                        <div>
+                            <div className="flex justify-between items-start flex-wrap gap-2 mb-2">
+                                <h3 className="text-lg sm:text-xl font-bold text-white tracking-wide">
+                                    {experiences[0].role}
+                                </h3>
+                                <span className="text-xs sm:text-sm italic font-medium text-violet-400">
+                                    {experiences[0].period}
+                                </span>
+                            </div>
+                            <h4 className="text-sm sm:text-base font-semibold text-zinc-300 mb-4">
+                                {experiences[0].institution}
+                            </h4>
+                            <ul className="list-disc list-inside text-xs sm:text-sm text-zinc-400 leading-relaxed space-y-2">
+                                {experiences[0].description.map((item, i) => (
+                                    <li key={i}>{item}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    </motion.div>
 
-                {/* Right Side - NANHI KASHTIYAN */}
-                <div className="experience-card right">
-                    <div className="experience-header">
-                        <h3>{nanhi.role}</h3>
-                        <span className="experience-period">{nanhi.period}</span>
-                    </div>
-                    <h4 className="experience-institution">
-                        {nanhi.institution} {nanhi.location && <span className="experience-location">| {nanhi.location}</span>}
-                    </h4>
-                    <div className="experience-description">
-                        <ul>
-                            {nanhi.description.map((item, i) => (
-                                <li key={i}>{item}</li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
+                    {/* Divider Line */}
+                    <div className="hidden md:block w-[2px] bg-gradient-to-b from-violet-500/10 via-violet-500 to-violet-500/10 rounded-full self-stretch" />
+
+                    {/* NANHI KASHTIYAN Card */}
+                    <motion.div 
+                        variants={cardVariants}
+                        whileHover={{ y: -4 }}
+                        transition={{ type: "spring", stiffness: 240, damping: 20 }}
+                        className="bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 backdrop-blur-md flex flex-col justify-between hover:border-violet-500/60 transition-colors duration-300 shadow-xl"
+                    >
+                        <div>
+                            <div className="flex justify-between items-start flex-wrap gap-2 mb-2">
+                                <h3 className="text-lg sm:text-xl font-bold text-white tracking-wide">
+                                    {experiences[1].role}
+                                </h3>
+                                <span className="text-xs sm:text-sm italic font-medium text-violet-400">
+                                    {experiences[1].period}
+                                </span>
+                            </div>
+                            <h4 className="text-sm sm:text-base font-semibold text-zinc-300 mb-4">
+                                {experiences[1].institution} <span className="text-xs text-zinc-400 font-normal">| {experiences[1].location}</span>
+                            </h4>
+                            <ul className="list-disc list-inside text-xs sm:text-sm text-zinc-400 leading-relaxed space-y-2">
+                                {experiences[1].description.map((item, i) => (
+                                    <li key={i}>{item}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    </motion.div>
+                </motion.div>
             </div>
         </section>
     );
 };
 
 export default Academic;
-
