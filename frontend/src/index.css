@@ -559,37 +559,4 @@ footer {
     top: 20%;
     left: -100px;
 }
-
-/* Floating Social Sidebar */
-.social-sidebar {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1.5rem;
-    z-index: 100;
-}
-
-.social-sidebar a {
-    color: var(--text-color);
-    transition: transform 0.3s, color 0.3s;
-}
-
-.social-sidebar a:hover {
-    color: var(--accent-color);
-    transform: translateY(-3px);
-}
-
-.social-sidebar .line {
-    display: none;
-    /* Removed vertical line for horizontal layout */
-}
-
-@media (max-width: 768px) {
-    .social-sidebar {
-        display: none;
-        /* Hide on mobile to avoid clutter */
-    }
-}
+
