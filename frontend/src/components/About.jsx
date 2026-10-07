@@ -139,23 +139,6 @@ const About = () => {
                         ))}
                     </div>
                 </motion.div>
-
-                {/* 5. SECOND SMALL PHOTO (Bottom Right - 3:4 Portrait, 3.5° counter-clockwise tilt, B&W) */}
-                <motion.div 
-                    className="self-end w-[42%] sm:w-[160px] md:w-[190px] lg:w-[220px] aspect-[3/4] bg-zinc-100 overflow-hidden rounded-none border-0 shadow-none cursor-pointer"
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.3 }}
-                    variants={fadeInTiltedPhoto}
-                    whileHover={{ scale: 1.03, rotate: -1.5 }}
-                    transition={{ type: "spring", stiffness: 220, damping: 20 }}
-                >
-                    <img 
-                        src={secondaryPhoto} 
-                        alt="Akansha detail" 
-                        className="w-full h-full object-cover grayscale contrast-110 rounded-none pointer-events-none block" 
-                    />
-                </motion.div>
             </div>
         </section>
     );
