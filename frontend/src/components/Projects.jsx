@@ -40,7 +40,14 @@ const Projects = () => {
                 {projects.map((project, index) => (
                     <React.Fragment key={index}>
                         <div className="featured-project">
-                            <div className="project-visual">
+                            <a 
+                                href={project.link} 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="project-visual" 
+                                aria-label={`View ${project.title}`}
+                                style={{ display: 'block', cursor: 'pointer' }}
+                            >
                                 <div className="visual-inner" style={{ background: project.imageColor }}>
                                     {project.image ? (
                                         <img src={project.image} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'contain', background: '#000000' }} />
@@ -48,7 +55,7 @@ const Projects = () => {
                                         <h3 style={{ fontSize: '3rem', opacity: 0.15, fontWeight: 800, letterSpacing: '2px' }}>{project.title}</h3>
                                     )}
                                 </div>
-                            </div>
+                            </a>
 
                             <div className="project-content">
                                 <div className="project-category">{project.category}</div>
