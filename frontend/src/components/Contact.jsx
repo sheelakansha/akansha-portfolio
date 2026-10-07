@@ -3,23 +3,22 @@ import { motion } from 'framer-motion';
 
 /**
  * Contact Component - Minimal, editorial left-aligned contact section.
- * Features large 60px uppercase "WORK WITH ME" heading, left-aligned layout,
- * and clean text details without button styling.
+ * Fits within 100vh screen height (h-screen max-h-screen) without scrolling.
  */
 const Contact = () => {
     return (
         <section 
             id="contact" 
-            className="w-full bg-black text-white px-6 sm:px-12 md:px-16 lg:px-24 py-16 md:py-24 border-t border-white/10 select-none text-left"
+            className="relative w-full h-screen max-h-screen bg-black text-white px-6 sm:px-12 md:px-16 lg:px-24 py-12 md:py-20 border-t border-white/10 select-none text-left flex flex-col justify-center items-center overflow-hidden"
         >
-            <div className="max-w-6xl mx-auto flex flex-col items-start justify-start text-left">
-                {/* HEADING: WORK WITH ME (Uppercase, 60px, left-aligned, no button styling) */}
+            <div className="w-full max-w-6xl mx-auto flex flex-col items-start justify-center my-auto">
+                {/* HEADING: WORK WITH ME (Uppercase, 60px, left-aligned) */}
                 <motion.h2 
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-[40px] sm:text-[50px] md:text-[60px] font-normal uppercase tracking-tight text-white text-left mb-6 p-0 border-none bg-transparent shadow-none"
+                    className="text-[38px] sm:text-[48px] md:text-[60px] font-normal uppercase tracking-tight text-white text-left mb-6 p-0 border-none bg-transparent shadow-none"
                     style={{ fontFamily: 'Inter, sans-serif', fontSize: '60px', fontWeight: 400, textTransform: 'uppercase' }}
                 >
                     WORK WITH ME
