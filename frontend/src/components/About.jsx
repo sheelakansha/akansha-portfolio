@@ -47,10 +47,10 @@ const About = () => {
                     variants={fadeInUp}
                 >
                     <h2 
-                        className="text-[clamp(2.5rem,4.8vw,4.8rem)] font-light text-black uppercase leading-[0.92] tracking-tight text-left m-0 p-0"
+                        className="text-[clamp(2.2rem,4.2vw,4.2rem)] font-light text-black uppercase leading-[0.92] tracking-tight text-left m-0 p-0"
                         style={{ fontFamily: 'Inter, Poppins, sans-serif', fontWeight: 300, color: '#000000' }}
                     >
-                        About<br />Me
+                        A LITTLE<br />ABOUT ME
                     </h2>
                 </motion.div>
 
