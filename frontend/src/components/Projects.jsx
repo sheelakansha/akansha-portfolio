@@ -60,17 +60,20 @@ const Projects = () => {
             id="projects" 
             className="relative w-full h-screen max-h-screen bg-black text-white flex flex-col justify-center items-center overflow-hidden px-6 sm:px-12 md:px-16 lg:px-24 py-6 md:py-10 select-none"
         >
-            <div className="w-full max-w-6xl mx-auto flex flex-col items-center justify-center my-auto">
-                {/* SECTION HEADER */}
+            <div className="w-full max-w-6xl mx-auto flex flex-col items-start justify-center my-auto">
+                {/* SECTION HEADER (Left-aligned, 60px size, uppercase) */}
                 <motion.div 
-                    className="mb-4 md:mb-6 text-center"
+                    className="w-full mb-4 md:mb-6 text-left"
                     initial={{ opacity: 0, y: -15 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                 >
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white m-0">
-                        Latest <span className="hollow-text text-transparent" style={{ WebkitTextStroke: '1px rgba(255, 255, 255, 0.5)' }}>Projects</span>
+                    <h2 
+                        className="text-[38px] sm:text-[48px] md:text-[60px] font-normal uppercase tracking-tight text-white text-left m-0 p-0"
+                        style={{ fontFamily: 'Inter, sans-serif', fontSize: '60px', fontWeight: 400, textTransform: 'uppercase' }}
+                    >
+                        LATEST PROJECTS
                     </h2>
                 </motion.div>
 
