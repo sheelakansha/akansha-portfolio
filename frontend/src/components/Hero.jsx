@@ -40,13 +40,13 @@ const Hero = () => {
         },
     };
 
-    // Entry animation for clockwise-tilted photo (3.5 degrees clockwise)
+    // Entry animation for counter-clockwise left-tilted photo (-3.5 degrees)
     const photoVariants = {
-        hidden: { opacity: 0, scale: 0.94, rotate: 3.5, y: 16 },
+        hidden: { opacity: 0, scale: 0.94, rotate: -3.5, y: 16 },
         visible: {
             opacity: 1,
             scale: 1,
-            rotate: 3.5,
+            rotate: -3.5,
             y: 0,
             transition: {
                 duration: 0.85,
@@ -58,7 +58,7 @@ const Hero = () => {
     return (
         <section 
             id="home" 
-            className="relative w-full h-screen max-h-screen bg-black text-white flex flex-col items-center justify-center overflow-hidden px-6 pt-16 pb-8 select-none"
+            className="relative w-full h-screen max-h-screen bg-black text-white flex flex-col items-center justify-center overflow-hidden px-6 pt-16 pb-8"
         >
             <motion.div
                 className="relative flex flex-col items-center justify-center w-full max-w-6xl mx-auto my-auto"
@@ -66,27 +66,31 @@ const Hero = () => {
                 initial="hidden"
                 animate="visible"
             >
-                {/* 1. NAME "Akansha" (Font: Arsenic, Size: 90.6px) */}
+                {/* 1. NAME "Akansha" (Font: Poppins) */}
                 <motion.h1
                     variants={textVariants}
-                    className="relative z-20 font-normal text-white leading-[0.85] text-center select-none tracking-tight"
+                    className="relative z-20 font-semibold text-white leading-[0.88] text-center tracking-tight"
                     style={{ 
-                        fontFamily: '"Arsenic", "Bodoni Moda", "Cormorant Garamond", serif', 
-                        fontSize: 'clamp(42px, 6.5vw, 90.6px)',
-                        fontWeight: 400 
+                        fontFamily: '"Poppins", sans-serif', 
+                        fontSize: 'clamp(52px, 8vw, 110px)',
+                        fontWeight: 600 
                     }}
                 >
                     Akansha
                 </motion.h1>
 
-                {/* 2. B&W PHOTO (Medium size photo below Akansha) */}
+                {/* 2. B&W PHOTO (Medium size photo directly underneath/behind Akansha text) */}
                 <motion.div
                     variants={photoVariants}
-                    whileHover={{ scale: 1.02, rotate: 1.5 }}
+                    whileHover={{ scale: 1.02, rotate: -1.5 }}
                     transition={{ type: "spring", stiffness: 220, damping: 22 }}
-                    className="relative z-10 -mt-5 sm:-mt-7 md:-mt-9 -mb-8 sm:-mb-10 md:-mb-12 cursor-pointer flex justify-center"
+                    className="relative z-10 cursor-pointer w-full flex justify-center items-center mx-auto"
+                    style={{ 
+                        marginTop: 'clamp(-25px, -3.5vw, -50px)', 
+                        marginBottom: 'clamp(-35px, -4.5vw, -65px)' 
+                    }}
                 >
-                    <div className="w-[260px] sm:w-[340px] md:w-[380px] lg:w-[420px] aspect-[4/3] overflow-hidden bg-black rounded-none border-0 shadow-none">
+                    <div className="w-[260px] sm:w-[340px] md:w-[380px] lg:w-[420px] aspect-[4/3] overflow-hidden bg-black rounded-none border-0 shadow-none mx-auto">
                         <img
                             src={profilePhoto}
                             alt="Akansha"
@@ -95,13 +99,14 @@ const Hero = () => {
                     </div>
                 </motion.div>
 
-                {/* 3. THE WORD "PORTFOLIO" (Font: Poppins, Size: 110px, Bold, Uppercase) */}
+                {/* 3. THE WORD "PORTFOLIO" (Font: Poppins, Size: 110px, Bold, Uppercase - overlapping bottom portion of image) */}
                 <motion.div
                     variants={textVariants}
-                    className="relative z-0 w-full text-center"
+                    className="relative z-20 w-full text-center"
+                    style={{ marginTop: 'clamp(-30px, -4vw, -60px)' }}
                 >
                     <h2 
-                        className="font-bold text-white uppercase tracking-[0.03em] leading-[0.88] text-center select-none"
+                        className="font-bold text-white uppercase tracking-[0.03em] leading-[0.88] text-center"
                         style={{ 
                             fontFamily: '"Poppins", sans-serif', 
                             fontSize: 'clamp(48px, 8.2vw, 110px)',
@@ -115,10 +120,11 @@ const Hero = () => {
                 {/* 4. SUBTITLE (Font: TT Commons Pro, Size: 18.2px) */}
                 <motion.p
                     variants={textVariants}
-                    className="mt-5 sm:mt-6 font-normal text-white tracking-wide text-center"
+                    className="font-normal text-white tracking-wide text-center"
                     style={{ 
                         fontFamily: '"TT Commons Pro", "TT Commons", "Inter", sans-serif',
-                        fontSize: 'clamp(14px, 1.4vw, 18.2px)'
+                        fontSize: 'clamp(14px, 1.4vw, 18.2px)',
+                        marginTop: 'clamp(48px, 6vw, 84px)'
                     }}
                 >
                     Product Designer &amp; Developer

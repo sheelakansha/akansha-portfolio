@@ -51,7 +51,7 @@ const Academic = () => {
     return (
         <section 
             id="experience" 
-            className="relative w-full h-screen max-h-screen bg-white text-black flex flex-col justify-center items-center overflow-hidden px-6 sm:px-12 md:px-16 lg:px-24 py-10 md:py-16 select-none"
+            className="relative w-full h-screen max-h-screen bg-white text-black flex flex-col justify-center items-center overflow-hidden px-6 sm:px-12 md:px-16 lg:px-24 py-10 md:py-16"
             style={{ backgroundColor: '#ffffff', color: '#000000' }}
         >
             <div className="w-full max-w-6xl mx-auto flex flex-col items-center justify-center my-auto">

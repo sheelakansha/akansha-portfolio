@@ -45,7 +45,7 @@ const Projects = () => {
     return (
         <section 
             id="projects" 
-            className="relative w-full h-screen max-h-screen bg-black text-white flex flex-col justify-center items-center overflow-hidden px-6 sm:px-12 md:px-16 lg:px-24 py-6 md:py-10 select-none"
+            className="relative w-full h-screen max-h-screen bg-black text-white flex flex-col justify-center items-center overflow-hidden px-6 sm:px-12 md:px-16 lg:px-24 py-6 md:py-10"
             style={{ backgroundColor: '#000000', color: '#ffffff' }}
         >
             <div className="w-full max-w-6xl mx-auto flex flex-col items-start justify-center my-auto">

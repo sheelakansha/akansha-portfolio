@@ -23,6 +23,8 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    user-select: text;
+    -webkit-user-select: text;
 }
 
 body {

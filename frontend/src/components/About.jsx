@@ -33,7 +33,7 @@ const About = () => {
     return (
         <section 
             id="about" 
-            className="relative w-full h-screen max-h-screen bg-white text-black px-6 sm:px-12 md:px-16 lg:px-24 py-10 md:py-14 lg:py-16 overflow-hidden flex flex-col justify-between select-none"
+            className="relative w-full h-screen max-h-screen bg-white text-black px-6 sm:px-12 md:px-16 lg:px-24 py-10 md:py-14 lg:py-16 overflow-hidden flex flex-col justify-between"
             style={{ backgroundColor: '#ffffff', color: '#000000' }}
         >
             {/* TOP HEADER & MAIN PHOTO ROW */}
@@ -47,8 +47,8 @@ const About = () => {
                     variants={fadeInUp}
                 >
                     <h2 
-                        className="text-[clamp(2.2rem,4.2vw,4.2rem)] font-light text-black uppercase leading-[0.92] tracking-tight text-left m-0 p-0"
-                        style={{ fontFamily: 'Inter, Poppins, sans-serif', fontWeight: 300, color: '#000000' }}
+                        className="font-extrabold text-black uppercase leading-[0.92] tracking-tight text-left m-0 p-0"
+                        style={{ fontFamily: '"Poppins", "Inter", sans-serif', fontSize: 'clamp(32px, 4.2vw, 60px)', fontWeight: 800, color: '#000000' }}
                     >
                         A LITTLE<br />ABOUT ME
                     </h2>

@@ -9,7 +9,7 @@ const Contact = () => {
     return (
         <section 
             id="contact" 
-            className="relative w-full h-screen max-h-screen bg-black text-white px-6 sm:px-12 md:px-16 lg:px-24 py-12 md:py-20 border-t border-white/10 select-none text-left flex flex-col justify-center items-center overflow-hidden"
+            className="relative w-full h-screen max-h-screen bg-black text-white px-6 sm:px-12 md:px-16 lg:px-24 py-12 md:py-20 border-t border-white/10 text-left flex flex-col justify-center items-center overflow-hidden"
         >
             <div className="w-full max-w-6xl mx-auto flex flex-col items-start justify-center my-auto">
                 {/* HEADING: WORK WITH ME (Uppercase, 60px, left-aligned) */}
@@ -18,8 +18,8 @@ const Contact = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-[38px] sm:text-[48px] md:text-[60px] font-normal uppercase tracking-tight text-white text-left mb-6 p-0 border-none bg-transparent shadow-none"
-                    style={{ fontFamily: 'Inter, sans-serif', fontSize: '60px', fontWeight: 400, textTransform: 'uppercase' }}
+                    className="text-[38px] sm:text-[48px] md:text-[60px] font-bold uppercase tracking-tight text-white text-left mb-6 p-0 border-none bg-transparent shadow-none"
+                    style={{ fontFamily: '"Poppins", "Inter", sans-serif', fontSize: '60px', fontWeight: 700, textTransform: 'uppercase' }}
                 >
                     WORK WITH ME
                 </motion.h2>
