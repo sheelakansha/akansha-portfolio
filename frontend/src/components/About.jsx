@@ -8,6 +8,7 @@ const mainPhoto = profileImg;
 /**
  * About Component - Editorial, asymmetric white & black magazine/slide layout.
  * Fixed to exact screen height (100vh) without scrolling.
+ * Enforces pure white background (#ffffff) and pure black text (#000000).
  */
 const About = () => {
     // Animation variants
@@ -33,11 +34,11 @@ const About = () => {
         <section 
             id="about" 
             className="relative w-full h-screen max-h-screen bg-white text-black px-6 sm:px-12 md:px-16 lg:px-24 py-10 md:py-14 lg:py-16 overflow-hidden flex flex-col justify-between select-none"
-            style={{ backgroundColor: '#ffffff' }}
+            style={{ backgroundColor: '#ffffff', color: '#000000' }}
         >
             {/* TOP HEADER & MAIN PHOTO ROW */}
             <div className="w-full flex flex-col md:flex-row justify-between items-start gap-6 md:gap-8">
-                {/* 1. HEADING (Top Left - Light sans-serif, 2 lines) */}
+                {/* 1. HEADING (Top Left - Light sans-serif, 2 lines, pure black text) */}
                 <motion.div 
                     className="flex-1 max-w-lg"
                     initial="hidden"
@@ -47,7 +48,7 @@ const About = () => {
                 >
                     <h2 
                         className="text-[clamp(2.5rem,4.8vw,4.8rem)] font-light text-black uppercase leading-[0.92] tracking-tight text-left m-0 p-0"
-                        style={{ fontFamily: 'Inter, Poppins, sans-serif', fontWeight: 300 }}
+                        style={{ fontFamily: 'Inter, Poppins, sans-serif', fontWeight: 300, color: '#000000' }}
                     >
                         About<br />Me
                     </h2>
@@ -70,10 +71,10 @@ const About = () => {
                     />
                 </motion.div>
 
-                {/* 2. SECTION NUMBER (Top Right) */}
+                {/* 2. SECTION NUMBER (Top Right - Pure black text) */}
                 <motion.div 
                     className="hidden md:block text-black font-light text-base md:text-lg tracking-widest pt-2"
-                    style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300 }}
+                    style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300, color: '#000000' }}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.3 }}
@@ -92,16 +93,23 @@ const About = () => {
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.3 }}
                     variants={fadeInUp}
+                    style={{ color: '#000000' }}
                 >
-                    <p className="text-black text-sm sm:text-base md:text-[16px] font-normal leading-relaxed text-left m-0">
+                    <p 
+                        className="text-black text-sm sm:text-base md:text-[16px] font-normal leading-relaxed text-left m-0"
+                        style={{ color: '#000000' }}
+                    >
                         Hi, I'm Akansha, a developer who loves designing websites and digital products. I turn complex information into simple, beautiful, and intuitive interfaces, and I build what I design.
                     </p>
 
-                    <p className="text-black text-sm sm:text-base md:text-[16px] font-normal leading-relaxed text-left m-0">
+                    <p 
+                        className="text-black text-sm sm:text-base md:text-[16px] font-normal leading-relaxed text-left m-0"
+                        style={{ color: '#000000' }}
+                    >
                         When I'm not designing or coding, you can find me exploring new technologies, contributing to open source, or enjoying a good cup of coffee.
                     </p>
 
-                    {/* SKILL TAGS (Thin 1px black outline, sharp corners, hover inversion) */}
+                    {/* SKILL TAGS (Thin 1px black outline, sharp corners, pure black text) */}
                     <div className="flex flex-wrap gap-2 mt-2">
                         {[
                             'UI/UX Design',
@@ -114,7 +122,7 @@ const About = () => {
                             <span 
                                 key={tag}
                                 className="px-2.5 py-1 border border-black bg-transparent text-black text-[11px] sm:text-xs uppercase tracking-wider font-medium rounded-none hover:bg-black hover:text-white transition-colors duration-200 cursor-default"
-                                style={{ fontFamily: 'Inter, sans-serif' }}
+                                style={{ fontFamily: 'Inter, sans-serif', color: '#000000' }}
                             >
                                 {tag}
                             </span>
