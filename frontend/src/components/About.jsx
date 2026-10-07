@@ -1,26 +1,160 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import profileImg from '../assets/profile.jpg';
 
+// Image variables for easy swapping in the future
+const mainPhoto = profileImg;
+const secondaryPhoto = profileImg;
+
+/**
+ * About Component - Editorial, asymmetric white & black magazine/slide layout.
+ * 
+ * Features:
+ *  - Solid pure white background (#FFFFFF) with black text
+ *  - Top-left light sans-serif heading and top-right "02" section number
+ *  - Top centre-right 4:3 landscape B&W main photo (no tilt, sharp corners)
+ *  - Middle-left indented paragraph text column (max ~420px wide)
+ *  - Minimal outline skill tags with sharp corners and black hover inversion
+ *  - Bottom-right 3:4 portrait B&W small photo with a 3.5° counter-clockwise tilt
+ */
 const About = () => {
+    // Animation variants
+    const fadeInUp = {
+        hidden: { opacity: 0, y: 24 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+        },
+    };
+
+    const fadeInPhoto = {
+        hidden: { opacity: 0, scale: 0.96 },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] },
+        },
+    };
+
+    const fadeInTiltedPhoto = {
+        hidden: { opacity: 0, scale: 0.94, rotate: -3.5 },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            rotate: -3.5,
+            transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] },
+        },
+    };
+
     return (
-        <section id="about" className="about">
-            <h2 className="section-title">About Me</h2>
-            <div className="about-grid">
-                <div className="about-text">
-                    <p>Hi, I'm Akansha, a developer who loves designing websites and digital products. I turn complex information into simple, beautiful, and intuitive interfaces, and I build what I design.</p>
-                    <p>When I'm not designing or coding, you can find me exploring new technologies, contributing to open source, or enjoying a good cup of coffee.</p>
-                    <div className="skills-tags">
-                        <span className="skill-tag">UI/UX Design</span>
-                        <span className="skill-tag">React</span>
-                        <span className="skill-tag">JavaScript</span>
-                        <span className="skill-tag">HTML5</span>
-                        <span className="skill-tag">CSS3</span>
-                        <span className="skill-tag">Node.js</span>
+        <section 
+            id="about" 
+            className="relative w-full min-h-screen bg-white text-black px-6 sm:px-12 md:px-16 lg:px-24 py-16 md:py-24 overflow-hidden flex flex-col justify-between select-none"
+        >
+            {/* TOP HEADER & MAIN PHOTO ROW */}
+            <div className="w-full flex flex-col md:flex-row justify-between items-start gap-8 md:gap-12">
+                {/* 1. HEADING (Top Left - Light sans-serif, 2 lines) */}
+                <motion.div 
+                    className="flex-1 max-w-lg"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                    variants={fadeInUp}
+                >
+                    <h2 
+                        className="text-[clamp(2.75rem,5.5vw,5.5rem)] font-light text-black uppercase leading-[0.92] tracking-tight text-left m-0 p-0"
+                        style={{ fontFamily: 'Inter, Poppins, sans-serif', fontWeight: 300 }}
+                    >
+                        About<br />Me
+                    </h2>
+                </motion.div>
+
+                {/* 3. MAIN PHOTO (Top Centre-Right - 4:3 Landscape, B&W, sharp corners, no tilt) */}
+                <motion.div 
+                    className="w-full md:w-[32%] lg:w-[36%] max-w-[460px] aspect-[4/3] bg-zinc-100 overflow-hidden rounded-none border-0 shadow-none"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                    variants={fadeInPhoto}
+                    whileHover={{ scale: 1.03 }}
+                    transition={{ type: "spring", stiffness: 220, damping: 20 }}
+                >
+                    <img 
+                        src={mainPhoto} 
+                        alt="Akansha" 
+                        className="w-full h-full object-cover grayscale contrast-105 rounded-none pointer-events-none block" 
+                    />
+                </motion.div>
+
+                {/* 2. SECTION NUMBER (Top Right) */}
+                <motion.div 
+                    className="hidden md:block text-black font-light text-lg md:text-xl tracking-widest pt-2"
+                    style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300 }}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                    variants={fadeInUp}
+                >
+                    02
+                </motion.div>
+            </div>
+
+            {/* MIDDLE TEXT & BOTTOM TILTED PHOTO CONTAINER */}
+            <div className="w-full flex flex-col md:flex-row justify-between items-end mt-12 md:mt-16 gap-12">
+                {/* 4. TEXT PARAGRAPHS & SKILL TAGS (Middle-Left, Indented column ~380-420px wide) */}
+                <motion.div 
+                    className="w-full md:ml-[12%] lg:ml-[15%] max-w-[420px] flex flex-col gap-6"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                    variants={fadeInUp}
+                >
+                    <p className="text-black text-base md:text-[17px] font-normal leading-relaxed text-left m-0">
+                        Hi, I'm Akansha, a developer who loves designing websites and digital products. I turn complex information into simple, beautiful, and intuitive interfaces, and I build what I design.
+                    </p>
+
+                    <p className="text-black text-base md:text-[17px] font-normal leading-relaxed text-left m-0">
+                        When I'm not designing or coding, you can find me exploring new technologies, contributing to open source, or enjoying a good cup of coffee.
+                    </p>
+
+                    {/* 6. SKILL TAGS (Thin 1px black outline, sharp corners, hover inversion) */}
+                    <div className="flex flex-wrap gap-2.5 mt-4">
+                        {[
+                            'UI/UX Design',
+                            'React',
+                            'JavaScript',
+                            'HTML5',
+                            'CSS3',
+                            'Node.js',
+                        ].map((tag) => (
+                            <span 
+                                key={tag}
+                                className="px-3 py-1.5 border border-black bg-transparent text-black text-xs uppercase tracking-wider font-medium rounded-none hover:bg-black hover:text-white transition-colors duration-200 cursor-default"
+                                style={{ fontFamily: 'Inter, sans-serif' }}
+                            >
+                                {tag}
+                            </span>
+                        ))}
                     </div>
-                </div>
-                <div className="about-image" style={{ background: 'transparent', height: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <img src={profileImg} alt="Akansha" style={{ maxWidth: '100%', maxHeight: '100%', borderRadius: '20px', objectFit: 'cover' }} />
-                </div>
+                </motion.div>
+
+                {/* 5. SECOND SMALL PHOTO (Bottom Right - 3:4 Portrait, 3.5° counter-clockwise tilt, B&W) */}
+                <motion.div 
+                    className="self-end w-[42%] sm:w-[160px] md:w-[190px] lg:w-[220px] aspect-[3/4] bg-zinc-100 overflow-hidden rounded-none border-0 shadow-none cursor-pointer"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                    variants={fadeInTiltedPhoto}
+                    whileHover={{ scale: 1.03, rotate: -1.5 }}
+                    transition={{ type: "spring", stiffness: 220, damping: 20 }}
+                >
+                    <img 
+                        src={secondaryPhoto} 
+                        alt="Akansha detail" 
+                        className="w-full h-full object-cover grayscale contrast-110 rounded-none pointer-events-none block" 
+                    />
+                </motion.div>
             </div>
         </section>
     );
