@@ -66,23 +66,27 @@ const Hero = () => {
                 initial="hidden"
                 animate="visible"
             >
-                {/* 1. NAME "Akansha" (Large display serif name) */}
+                {/* 1. NAME "Akansha" (Font: Arsenic, Size: 90.6px) */}
                 <motion.h1
                     variants={textVariants}
-                    className="relative z-20 text-[clamp(4.5rem,12.5vw,13.5rem)] font-normal text-white leading-[0.85] text-center select-none tracking-tight"
-                    style={{ fontFamily: '"Bodoni Moda", "Cormorant Garamond", serif', fontWeight: 400 }}
+                    className="relative z-20 font-normal text-white leading-[0.85] text-center select-none tracking-tight"
+                    style={{ 
+                        fontFamily: '"Arsenic", "Bodoni Moda", "Cormorant Garamond", serif', 
+                        fontSize: 'clamp(42px, 6.5vw, 90.6px)',
+                        fontWeight: 400 
+                    }}
                 >
                     Akansha
                 </motion.h1>
 
-                {/* 2. B&W PHOTO (Centered landscape photo with ~2.5 deg tilt and overlapping margins) */}
+                {/* 2. B&W PHOTO (Medium size photo below Akansha) */}
                 <motion.div
                     variants={photoVariants}
                     whileHover={{ scale: 1.02, rotate: 1.5 }}
                     transition={{ type: "spring", stiffness: 220, damping: 22 }}
-                    className="relative z-10 -mt-6 sm:-mt-10 md:-mt-14 lg:-mt-[56px] -mb-10 sm:-mb-14 md:-mb-20 lg:-mb-[84px] cursor-pointer flex justify-center"
+                    className="relative z-10 -mt-5 sm:-mt-7 md:-mt-9 -mb-8 sm:-mb-10 md:-mb-12 cursor-pointer flex justify-center"
                 >
-                    <div className="w-[300px] sm:w-[420px] md:w-[500px] lg:w-[580px] xl:w-[620px] aspect-[4/3] overflow-hidden bg-black rounded-none border-0 shadow-none">
+                    <div className="w-[260px] sm:w-[340px] md:w-[380px] lg:w-[420px] aspect-[4/3] overflow-hidden bg-black rounded-none border-0 shadow-none">
                         <img
                             src={profilePhoto}
                             alt="Akansha"
@@ -91,24 +95,31 @@ const Hero = () => {
                     </div>
                 </motion.div>
 
-                {/* 3. THE WORD "PORTFOLIO" (Large uppercase Inter title) */}
+                {/* 3. THE WORD "PORTFOLIO" (Font: Poppins, Size: 110px, Bold, Uppercase) */}
                 <motion.div
                     variants={textVariants}
                     className="relative z-0 w-full text-center"
                 >
                     <h2 
-                        className="text-[clamp(3.5rem,11.5vw,12rem)] font-normal text-white uppercase tracking-[0.03em] leading-[0.88] text-center select-none"
-                        style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400 }}
+                        className="font-bold text-white uppercase tracking-[0.03em] leading-[0.88] text-center select-none"
+                        style={{ 
+                            fontFamily: '"Poppins", sans-serif', 
+                            fontSize: 'clamp(48px, 8.2vw, 110px)',
+                            fontWeight: 700 
+                        }}
                     >
                         PORTFOLIO
                     </h2>
                 </motion.div>
 
-                {/* 4. SUBTITLE (Product Designer & Developer) */}
+                {/* 4. SUBTITLE (Font: TT Commons Pro, Size: 18.2px) */}
                 <motion.p
                     variants={textVariants}
-                    className="mt-6 sm:mt-8 text-sm sm:text-base md:text-[17px] font-normal text-white tracking-wide text-center"
-                    style={{ fontFamily: 'Inter, sans-serif' }}
+                    className="mt-5 sm:mt-6 font-normal text-white tracking-wide text-center"
+                    style={{ 
+                        fontFamily: '"TT Commons Pro", "TT Commons", "Inter", sans-serif',
+                        fontSize: 'clamp(14px, 1.4vw, 18.2px)'
+                    }}
                 >
                     Product Designer &amp; Developer
                 </motion.p>
