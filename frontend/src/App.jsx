@@ -26,7 +26,7 @@ function App() {
             });
         }, observerOptions);
 
-        const animatedElements = document.querySelectorAll('.project-card, .about-text, .section-title');
+        const animatedElements = document.querySelectorAll('.project-card, .about-text, .section-title, .experience-card');
         animatedElements.forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';

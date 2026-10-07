@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Global Styles & Variables */
 :root {
     --bg-color: #050505;
@@ -8,7 +14,7 @@
     --secondary-bg: #121212;
     --card-bg: rgba(255, 255, 255, 0.05);
     --nav-bg: rgba(5, 5, 5, 0.8);
-    --font-main: 'Outfit', sans-serif;
+    --font-main: 'Poppins', sans-serif;
     --transition-speed: 0.3s;
 }
 
@@ -41,64 +47,17 @@ ul {
 h1,
 h2,
 h3 {
-    font-weight: 700;
     line-height: 1.2;
 }
 
 h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    background: linear-gradient(to right, #fff, var(--accent-color));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #ffffff;
 }
 
 h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
     text-align: center;
-}
-
-span.highlight {
-    color: var(--accent-color);
-}
-
-/* Navigation */
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 1.5rem 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--nav-bg);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-.nav-links {
-    display: flex;
-    gap: 2rem;
-}
-
-.nav-links a:hover {
-    color: var(--accent-color);
-    text-shadow: 0 0 10px var(--accent-glow);
-}
-
-.hamburger {
-    display: none;
-    cursor: pointer;
-    font-size: 1.5rem;
 }
 
 /* Hero Section */
@@ -340,11 +299,178 @@ section {
     .featured-project:nth-child(even) {
         flex-direction: column;
         gap: 2rem;
-        margin-bottom: 5rem;
+        margin-bottom: 3rem;
     }
     
     .section-title-large {
         font-size: 3rem;
+    }
+}
+
+/* Tactical HUD Preview for O2 Sentinel */
+.hud-preview {
+    width: 85%;
+    padding: 1.2rem;
+    background: rgba(5, 15, 25, 0.85);
+    border: 1px solid rgba(6, 182, 212, 0.4);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
+    font-family: 'Courier New', monospace, sans-serif;
+    color: #06b6d4;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.hud-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed rgba(6, 182, 212, 0.3);
+    padding-bottom: 0.4rem;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+.hud-badge {
+    background: rgba(6, 182, 212, 0.2);
+    color: #22d3ee;
+    padding: 0.1rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.hud-metric {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.hud-label {
+    font-size: 0.7rem;
+    color: #94a3b8;
+    letter-spacing: 1px;
+}
+
+.hud-val {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(6, 182, 212, 0.6);
+}
+
+.hud-forecast {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    border-left: 2px solid #06b6d4;
+}
+
+/* Horizontal Line Separator between Projects */
+.projects-horizontal-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(124, 58, 237, 0.6) 50%, rgba(255, 255, 255, 0) 100%);
+    margin: 4rem 0;
+}
+
+/* Experience Section */
+.experience-container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 2.5rem;
+    align-items: stretch;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.experience-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px rgba(124, 58, 237, 0.15);
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.experience-header h3 {
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.experience-period {
+    font-style: italic;
+    color: var(--accent-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.experience-institution {
+    color: #cccccc;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.experience-location {
+    opacity: 0.7;
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+.experience-description {
+    color: #aaaaaa;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    flex: 1;
+}
+
+.experience-description ul {
+    list-style-type: disc;
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.experience-divider {
+    width: 2px;
+    background: linear-gradient(to bottom, rgba(124, 58, 237, 0.1), var(--accent-color), rgba(124, 58, 237, 0.1));
+    border-radius: 2px;
+}
+
+@media (max-width: 850px) {
+    .experience-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .experience-divider {
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(to right, rgba(124, 58, 237, 0.1), var(--accent-color), rgba(124, 58, 237, 0.1));
     }
 }
 
